@@ -10,7 +10,7 @@
     <script src="../js/index.js"></script>
 </head>
 <body>
-    <?php include 'navbar.php'; ?>
+    <?php include 'views/navbar.php'; ?>
     <div class="container">
         <div class="highlight-box">
             <h1>Bem-vindo ao Sistema de Gestão de Mercado</h1>
