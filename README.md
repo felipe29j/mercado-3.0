@@ -22,9 +22,7 @@ git clone [https://github.com/felipe29j/mercado-3.0.git](https://github.com/feli
 
 ## 3. Desenvolvimento do Banco de Dados 
 
-Lembrando que pode se pegar o dump e apenas criar o database para usá-lo, o dump está dentro da pasta raiz como a nomeação de 'mercado'.
-
-Crie um database mercado;
+Lembrando que pode se pegar o dump e apenas criar o database com a nome "mercado" para usá-lo, o dump está dentro da pasta raiz com a nomeação de 'mercado'.
 
 Execução do Arquivo SQL:
 
