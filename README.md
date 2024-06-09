@@ -24,7 +24,7 @@ git clone [https://github.com/felipe29j/mercado-3.0.git](https://github.com/feli
 
 Lembrando que pode se pegar o dump e apenas criar o database para usá-lo, o dump está dentro da pasta raiz como a nomeação de 'mercado'.
 
-CREATE DATABASE mercado;
+Crie um database mercado;
 
 Execução do Arquivo SQL:
 
@@ -39,6 +39,8 @@ Use o comando psql -U <username> -d <database_name> -f mercado.sql, substituindo
 Via pgAdmin:
 
 Abra o pgAdmin e faça login.
+
+Crie um database mercado;
 
 Selecione o banco de dados para o qual deseja importar o mercado SQL.
 
