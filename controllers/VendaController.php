@@ -44,7 +44,6 @@ class VendaController {
 
 }
 
-// Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['produtos_quantidades'])) {
     $produtos_quantidades = $_POST['produtos_quantidades'];
 

@@ -20,7 +20,6 @@ class TipoProdutoController {
     }
 }
 
-// Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['nome']) && isset($_POST['imposto_percentual'])) {
         $nome_tipo = $_POST['nome'];

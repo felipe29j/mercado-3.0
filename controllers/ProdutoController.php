@@ -25,7 +25,6 @@ class ProdutoController {
     }
 }
 
-// Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['nome']) && isset($_POST['tipo_id']) && isset($_POST['preco'])) {
         $nome_produto = $_POST['nome'];

@@ -1,8 +1,8 @@
 <?php
-require_once '../models/Database.php'; // Inclui a classe Database
-require_once '../models/Produto.php'; // Inclui a classe Produto
-require_once '../controllers/VendaController.php'; // Inclui o controlador VendaController
-// Cria uma instância do Database para conectar ao banco de dados
+require_once '../models/Database.php';
+require_once '../models/Produto.php'; 
+require_once '../controllers/VendaController.php'; 
+
 $database = new Database();
 $pdo = $database->connect();
 ?>
@@ -18,9 +18,9 @@ $pdo = $database->connect();
     <script src="../js/registrar_venda.js"></script>
 </head>
 <body>
-<?php include 'navbar.php'; ?> <!-- Inclui a navbar -->
+<?php include 'navbar.php'; ?>
     <div class="container" style="width: 45%">
-        <h2>Registrar Venda</h2>
+        <h2>Efetuar Venda</h2>
         <form action="../controllers/VendaController.php" method="POST" onsubmit="return validarFormulario();">
             <div class="form-group">
                 <label for="produto_id">Produto</label>

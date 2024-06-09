@@ -1,7 +1,5 @@
 <?php
-require_once '../models/Database.php'; // Importando a classe Database
-
-// Criando uma instância da classe Database para conectar ao banco de dados
+require_once '../models/Database.php'; 
 $database = new Database();
 $pdo = $database->connect();
 
