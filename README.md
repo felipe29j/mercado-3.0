@@ -128,7 +128,7 @@ CREATE TABLE vendas (
 
 4.1. Conexão com o Banco de Dados
 
-Criei um arquivo conexao.php na pasta api para estabelecer a conexão com o banco de dados.
+Criei um arquivo models/Database.php na pasta api para estabelecer a conexão com o banco de dados.
 
 $host = 'localhost'; //Insira o host que ira utilizar 
 
