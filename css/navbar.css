@@ -1,0 +1,5 @@
+.navbar a.selected {
+    background-color: #333; /* Cor de fundo selecionada */
+    color: #fff; /* Cor do texto selecionado */
+    font-weight: bold; /* Texto em negrito */
+}
