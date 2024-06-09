@@ -10,7 +10,14 @@
     <script src="../js/index.js"></script>
 </head>
 <body>
-    <?php include 'views/navbar.php'; ?>
+    <div class="navbar">
+        <a href="views/index.php"><i class="fas fa-home"></i>Home</a>
+        <a href="views/cadastrar_tipo_produto.php"><i class="fas fa-tags"></i>Cadastrar Tipo de Produto</a>
+        <a href="views/cadastrar_produto.php"><i class="fas fa-box"></i>Cadastrar Produto</a>
+        <a href="views/efetuar_venda.php"><i class="fas fa-shopping-cart"></i> Efetuar Venda</a>
+        <a href="views/listar_produtos.php"><i class="fas fa-list"></i>Listar Produtos</a>
+        <a href="views/listar_vendas.php"><i class="fas fa-file-invoice"></i>Listar Vendas</a>
+    </div>
     <div class="container">
         <div class="highlight-box">
             <h1>Bem-vindo ao Sistema de Gestão de Mercado</h1>
