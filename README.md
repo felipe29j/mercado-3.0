@@ -120,7 +120,7 @@ Abra o terminal, navegue até a pasta raiz do seu projeto (mercado/) e execute o
 
 php -S localhost:8080
 
-Lembrando que deve ter as extensões do postgres habilitados para a execução correta.
+Lembrando que deve ter as extensões do postgres habilitados ( extension=pdo_pgsql ou extension=pgsql) para a execução correta.
 
 6.2. Acesso às Páginas
 
