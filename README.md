@@ -102,15 +102,11 @@ $username = 'username'; //Nome do usuario do banco
 
 $password = 'password'; //Sua senha usada no banco
 
-4.2. Criação dos Endpoints
-
-Desenvolvi os arquivos PHP dentro da pasta api para lidar com as operações CRUD necessárias, como cadastrar produtos, tipos de produtos, listar produtos e registrar vendas.
-
 ## 5. Desenvolvimento do Frontend em HTML e CSS
 
 5.1. Páginas HTML
 
-Criei arquivos HTML para as diferentes páginas do projeto, como a página inicial (index.php), página de cadastro de produtos (cadastro_produto.php), página de cadastro de tipos de produtos (cadastro_tipo_produto.php), página de listagem de produtos (listar_produtos.php) e página de registro de vendas (registrar_venda.php).
+Criei arquivos HTML para as diferentes páginas do projeto, como a página inicial (index.php), página de cadastro de produtos (cadastro_produto.php), página de cadastro de tipos de produtos (cadastro_tipo_produto.php), página de listagem de produtos (listar_produtos.php) e página de registro de vendas (efetuar_venda.php).
 
 5.2. Estilização com CSS
 
@@ -124,7 +120,7 @@ Abra o terminal, navegue até a pasta raiz do seu projeto (mercado/) e execute o
 
 php -S localhost:8080
 
-Lembrando que deve ter os dll do postgres habilitados para a execução correta.
+Lembrando que deve ter as extensões do postgres habilitados para a execução correta.
 
 6.2. Acesso às Páginas
 
