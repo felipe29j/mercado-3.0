@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="cta">
-            <a href="cadastro_tipo_produto.php" class="button">Comece Agora</a>
+            <a href="cadastrar_tipo_produto.php" class="button">Comece Agora</a>
         </div>
         <div id="myModal" class="modal">
             <div class="modal-content">
