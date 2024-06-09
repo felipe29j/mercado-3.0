@@ -1,14 +1,9 @@
 <?php
-require_once '../models/Database.php'; 
-$database = new Database();
-$pdo = $database->connect();
+require_once '../controllers/VendaController.php';
 
-$stmt = $pdo->query('SELECT p.nome AS produto_nome, SUM(v.quantidade) AS quantidade_total, 
-    SUM(v.valor_total) AS valor_total, 
-    SUM(v.valor_imposto) AS valor_imposto 
-    FROM vendas v JOIN produtos p ON v.produto_id = p.id 
-    GROUP BY v.produto_id, p.nome
-    ORDER BY quantidade_total DESC');
+$vendaController = new VendaController();
+$produtos = $vendaController->getAllVendas();
+
 ?>
 
 <!DOCTYPE html>
@@ -35,14 +30,14 @@ $stmt = $pdo->query('SELECT p.nome AS produto_nome, SUM(v.quantidade) AS quantid
                 </tr>
             </thead>
             <tbody>
-                <?php while ($row = $stmt->fetch()): ?>
+                <?php foreach ($produtos as $produto): ?>
                 <tr>
-                    <td><?php echo $row['produto_nome']; ?></td>
-                    <td><?php echo $row['quantidade_total']; ?></td>
-                    <td>R$ <?php echo number_format($row['valor_total'], 2, ',', '.'); ?></td>
-                    <td>R$ <?php echo number_format($row['valor_imposto'], 2, ',', '.'); ?></td>
+                    <td><?php echo $produto['produto_nome']; ?></td> <!-- Nome do produto -->
+                    <td><?php echo $produto['quantidade_total']; ?></td> <!-- Quantidade Vendida -->
+                    <td>R$ <?php echo number_format($produto['valor_total'], 2, ',', '.'); ?></td> <!-- Valor Total -->
+                    <td>R$ <?php echo number_format($produto['valor_imposto'], 2, ',', '.'); ?></td> <!-- Valor do Imposto -->
                 </tr>
-                <?php endwhile; ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>

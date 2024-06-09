@@ -1,7 +1,8 @@
 <?php
-require_once '../models/Database.php';
-$database = new Database();
-$pdo = $database->connect();
+require_once '../controllers/ProdutoController.php';
+
+$controller = new ProdutoController();
+$produtos = $controller->listarProdutos();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,19 +29,23 @@ $pdo = $database->connect();
                 </tr>
             </thead>
             <tbody>
-                <?php
-                // Consulta SQL para obter os produtos e seus tipos
-                $stmt = $pdo->query('SELECT p.id, p.nome, t.nome AS tipo, p.preco FROM produtos p JOIN tipos_produtos t ON p.tipo_id = t.id');
-                while ($row = $stmt->fetch()) {
-                    $preco = str_replace('.', ',', $row['preco']);
-                    echo "<tr>
-                            <td>{$row['id']}</td>
-                            <td>{$row['nome']}</td>
-                            <td>{$row['tipo']}</td>
-                            <td>R$ {$preco}</td>
-                          </tr>";
-                }
-                ?>
+                <?php if (!empty($produtos)): ?>
+                    <?php foreach ($produtos as $produto): ?>
+                        <?php
+                        $preco = number_format($produto['preco'], 2, ',', '.');
+                        ?>
+                        <tr>
+                            <td><?= $produto['id'] ?></td>
+                            <td><?= $produto['nome'] ?></td>
+                            <td><?= $produto['tipo'] ?></td>
+                            <td>R$ <?= $preco ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="4">Não há produtos cadastrados.</td>
+                    </tr>
+                <?php endif; ?>
             </tbody>
         </table>
     </div>

@@ -14,10 +14,10 @@ class TipoProduto {
     }
 
     public function getAll() {
-        $sql = "SELECT * FROM tipos_produtos";
-        $stmt = $this->conn->prepare($sql);
+        $query = 'SELECT id, nome FROM ' . $this->table;
+        $stmt = $this->conn->prepare($query);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt;
     }
 }
 ?>

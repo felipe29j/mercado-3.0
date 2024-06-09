@@ -1,15 +1,14 @@
 <?php
-
 require_once '../models/Database.php';
 require_once '../models/Produto.php';
 
 class ProdutoController {
     private $produtoModel;
-    private $database;
 
     public function __construct() {
-        $this->database = new Database();
-        $this->produtoModel = new Produto($this->database->connect());
+        $database = new Database();
+        $db = $database->connect();
+        $this->produtoModel = new Produto($db);
     }
 
     public function cadastrarProduto($nome, $tipo_id, $preco) {
@@ -26,7 +25,7 @@ class ProdutoController {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(isset($_POST['nome']) && isset($_POST['tipo_id']) && isset($_POST['preco'])) {
+    if (isset($_POST['nome']) && isset($_POST['tipo_id']) && isset($_POST['preco'])) {
         $nome_produto = $_POST['nome'];
         $tipo_id = $_POST['tipo_id'];
         $preco_produto = $_POST['preco'];
@@ -37,5 +36,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Por favor, preencha todos os campos do formulário.";
     }
 }
-
 ?>

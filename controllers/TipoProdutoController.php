@@ -4,11 +4,12 @@ require_once '../models/TipoProduto.php';
 
 class TipoProdutoController {
     private $tipoProdutoModel;
-    private $database;
+    private $db;
 
     public function __construct() {
-        $this->database = new Database();
-        $this->tipoProdutoModel = new TipoProduto($this->database->connect());
+        $database = new Database();
+        $this->db = $database->connect();
+        $this->tipoProdutoModel = new TipoProduto($this->db);
     }
 
     public function cadastrarTipoProduto($nome, $imposto_percentual) {
@@ -18,10 +19,17 @@ class TipoProdutoController {
         header('Location: ../views/cadastrar_tipo_produto.php');
         exit();
     }
+
+    public function getAllTiposProdutos() {
+        $stmt = $this->db->query('SELECT id, nome FROM tipos_produtos');
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(isset($_POST['nome']) && isset($_POST['imposto_percentual'])) {
+    if (isset($_POST['nome']) && isset($_POST['imposto_percentual'])) {
         $nome_tipo = $_POST['nome'];
         $imposto_percentual = $_POST['imposto_percentual'];
 

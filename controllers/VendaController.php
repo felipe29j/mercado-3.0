@@ -42,6 +42,23 @@ class VendaController {
         exit();
     }
 
+    public function getAllVendas() {
+        $stmt = $this->db->query('SELECT p.nome AS produto_nome, SUM(v.quantidade) AS quantidade_total, 
+                SUM(v.valor_total) AS valor_total, 
+                SUM(v.valor_imposto) AS valor_imposto 
+                FROM vendas v JOIN produtos p ON v.produto_id = p.id 
+                GROUP BY v.produto_id, p.nome
+                ORDER BY quantidade_total DESC');
+                
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getAllProdutos() {
+        $stmt = $this->db->query('SELECT p.id, p.nome, p.preco, t.imposto_percentual FROM produtos p JOIN tipos_produtos t ON p.tipo_id = t.id');
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['produtos_quantidades'])) {

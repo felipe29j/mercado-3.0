@@ -1,4 +1,6 @@
-<?php require_once '../models/Database.php'; ?>
+<?php
+require_once '../controllers/TipoProdutoController.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,11 +40,10 @@
                 <select id="tipo_id" name="tipo_id" required>
                     <option value="">Selecione</option>
                     <?php
-                    $database = new Database();
-                    $pdo = $database->connect();
-                    $stmt = $pdo->query('SELECT id, nome FROM tipos_produtos');
-                    while ($row = $stmt->fetch()) {
-                        echo "<option value=\"{$row['id']}\">{$row['nome']}</option>";
+                    $tipoProdutoController = new TipoProdutoController();
+                    $tiposProdutos = $tipoProdutoController->getAllTiposProdutos();
+                    foreach ($tiposProdutos as $tipo) {
+                        echo "<option value=\"{$tipo['id']}\">{$tipo['nome']}</option>";
                     }
                     ?>
                 </select>

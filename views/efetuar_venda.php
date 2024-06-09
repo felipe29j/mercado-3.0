@@ -1,10 +1,5 @@
 <?php
-require_once '../models/Database.php';
-require_once '../models/Produto.php'; 
-require_once '../controllers/VendaController.php'; 
-
-$database = new Database();
-$pdo = $database->connect();
+require_once '../controllers/VendaController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +13,8 @@ $pdo = $database->connect();
     <script src="../js/registrar_venda.js"></script>
 </head>
 <body>
-<?php include 'navbar.php'; ?>
-    <div class="container" style="width: 45%">
+    <?php include 'navbar.php'; ?>
+    <div class="container">
         <h2>Efetuar Venda</h2>
         <form action="../controllers/VendaController.php" method="POST" onsubmit="return validarFormulario();">
             <div class="form-group">
@@ -27,9 +22,10 @@ $pdo = $database->connect();
                 <select id="produto_id" name="produto_id">
                     <option value="">Selecione</option>
                     <?php
-                    $stmt = $pdo->query('SELECT p.id, p.nome, p.preco, t.imposto_percentual FROM produtos p JOIN tipos_produtos t ON p.tipo_id = t.id');
-                    while ($row = $stmt->fetch()) {
-                        echo "<option value=\"{$row['id']}\" data-preco=\"{$row['preco']}\" data-imposto=\"{$row['imposto_percentual']}\">{$row['nome']}</option>";
+                    $vendaController = new VendaController();
+                    $produtos = $vendaController->getAllProdutos();
+                    foreach ($produtos as $produto) {
+                        echo "<option value=\"{$produto['id']}\" data-preco=\"{$produto['preco']}\" data-imposto=\"{$produto['imposto_percentual']}\">{$produto['nome']}</option>";
                     }
                     ?>
                 </select>

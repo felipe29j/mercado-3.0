@@ -21,8 +21,8 @@ class Produto {
     }
 
     public function getAll() {
-        $sql = "SELECT * FROM produtos";
-        $stmt = $this->conn->prepare($sql);
+        $query = "SELECT p.id, p.nome, tp.nome as tipo, p.preco FROM produtos p JOIN tipos_produtos tp ON p.tipo_id = tp.id";
+        $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
