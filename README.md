@@ -16,9 +16,15 @@ Se desejar usar o PostgreSQL como banco de dados, baixe e instale o PostgreSQL e
 
 git clone [git@github.com:felipe29j/mercado-3.0.git](https://github.com/felipe29j/mercado-3.0.git)
 
+Se não ter a SSH pode usar esse 
+
+git clone [https://github.com/felipe29j/mercado-3.0.git](https://github.com/felipe29j/mercado-3.0.git)
+
 ## 3. Desenvolvimento do Banco de Dados 
 
 Lembrando que pode se pegar o dump e apenas criar o database para usá-lo, o dump está dentro da pasta raiz como a nomeação de 'mercado'.
+
+CREATE DATABASE mercado;
 
 Execução do Arquivo SQL:
 
