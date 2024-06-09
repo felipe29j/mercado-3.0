@@ -2,9 +2,9 @@
 class Database {
     private $host = 'localhost';
     private $db_name = 'mercado';
-    private $username = 'postgres';
-    private $password = 'Fe@290196';
-    private $port = '8080'; // Adicione a porta aqui
+    private $username = 'seu_username';
+    private $password = 'seu_password';
+    private $port = '5432'; // Altere para a porta correta, se necessário porta padrão: 5432 afim de testes fiz na porta 8080
     private $conn;
 
     public function connect() {

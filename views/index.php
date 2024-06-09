@@ -36,15 +36,6 @@
         <div class="cta">
             <a href="cadastrar_tipo_produto.php" class="button selected">Comece Agora</a>
         </div>
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="modal-close" onclick="closeModal()">&times;</span>
-                <h2>Seja bem-vindo!</h2>
-                <p>O Sistema de Gestão de Mercado é uma ferramenta poderosa para gerenciar suas vendas, produtos e muito mais. Utilize o menu acima para navegar pelas funcionalidades.</p>
-                <br>
-                <button class="close-button" onclick="closeModal()">Fechar</button>
-            </div>
         </div>
-    </div>
 </body>
 </html>
