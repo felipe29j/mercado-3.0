@@ -24,25 +24,57 @@ git clone [https://github.com/felipe29j/mercado-3.0.git](https://github.com/feli
 
 Lembrando que pode se pegar o dump e apenas criar o database com a nome "mercado" para usá-lo, o dump está dentro da pasta raiz com a nomeação de 'mercado'.
 
+Via terminal: 
+
 Execução do Arquivo SQL:
 
-Via Console (psql):
+1. Abra o Console do PostgreSQL (psql)
 
-Abra o terminal.
+Se você estiver em um ambiente Linux, macOS ou Windows com o PostgreSQL instalado, abra o terminal (ou Command Prompt no Windows) e inicie o console do PostgreSQL com o comando psql. Caso esteja utilizando uma interface gráfica como pgAdmin, você pode executar comandos SQL diretamente por lá.
 
-Navegue até o diretório onde o arquivo SQL está localizado.
+2. Conecte-se ao PostgreSQL
+No terminal, conecte-se ao servidor PostgreSQL usando o comando:
 
-Use o comando psql -U <username> -d <database_name> -f mercado.sql, substituindo <username> pelo seu nome de usuário do PostgreSQL e <database_name> pelo nome do banco de dados que deseja usar.
+psql -U <username>
+Substitua <username> pelo seu nome de usuário do PostgreSQL. Você pode ser solicitado a fornecer a senha do usuário.
+
+3. Crie o Banco de Dados
+
+Após conectar-se ao servidor PostgreSQL, crie o banco de dados usando o comando SQL:
+
+CREATE DATABASE mercado;
+
+Você deve ver uma mensagem de confirmação indicando que o banco de dados foi criado com sucesso.
+
+4. Conecte-se ao Banco de Dados "mercado"
+
+Agora, conecte-se ao banco de dados recém-criado:
+
+\c mercado
+
+Isso muda o contexto do console psql para o banco de dados "mercado".
+
+5. Execute o Script SQL para Criar e Popular as Tabelas
+
+Agora que você está conectado ao banco de dados "mercado", pode executar o script SQL que contém as definições e dados das tabelas.
+
+Se o arquivo SQL estiver no mesmo diretório do seu terminal, use o comando:
+
+\i mercado.sql
+
+Caso o arquivo esteja em outro diretório, forneça o caminho completo para o arquivo:
+
+\i /caminho/para/o/mercado.sql
 
 Via pgAdmin:
 
-Abra o pgAdmin e faça login.
+1. Abra o pgAdmin e faça login.
 
-Crie um database mercado;
+2. Crie um database mercado;
 
-Selecione o banco de dados para o qual deseja importar o mercado SQL.
+3. Selecione o banco de dados para o qual deseja importar o mercado SQL.
 
-Clique com o botão direito no banco de dados e escolha "Restore...". Isso abrirá uma janela onde você pode selecionar o arquivo SQL e iniciar o processo de restauração.
+4. Clique com o botão direito no banco de dados e escolha "Restore...". Isso abrirá uma janela onde você pode selecionar o arquivo SQL e iniciar o processo de restauração.
 
 3.1. Criação do Banco de Dados e Tabelas(Opcional)
 
